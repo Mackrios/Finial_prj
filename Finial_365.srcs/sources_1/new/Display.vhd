@@ -16,35 +16,19 @@ end display_driver;
 
 architecture Behavioral of display_driver is
 
+    -- State machine states
     type state_type is (IDLE, READ_MSB, READ_LSB, DONE);
     signal current_state, next_state : state_type;
 
-    -- Internal Signals
+    -- Internal Signals for MSB and LSB data
     signal msb_data   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     signal lsb_data   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     signal temp_data  : STD_LOGIC_VECTOR(15 downto 0);
 
-   
-    signal clk_div    : STD_LOGIC;
-
- 
-    component clock_divider
-        generic (DIVISOR : positive := 50000000);  
-        port (
-            mclk : in  std_logic;
-            sclk : out std_logic
-        );
-    end component;
-
 begin
 
-    clk_div_inst: clock_divider
-        port map (
-            mclk => clk,        -- 100 MHz input clock
-            sclk => clk_div     -- 2 Hz output clock
-        );
-
-    scl_enable <= clk_div;  
+    -- Clock divider signal (2 Hz output)
+    scl_enable <= clk; 
 
     -- State Machine Process
     process(clk, reset)
@@ -53,37 +37,34 @@ begin
             current_state <= IDLE;
             msb_data <= (others => '0');
             lsb_data <= (others => '0');
+            next_state <= IDLE;
         elsif rising_edge(clk) then
             current_state <= next_state;
 
             case current_state is
                 when IDLE =>
-                    if clk_div = '1' then
+                    if byte_ready = '1' then  -- Transition to READ_MSB when byte_ready is asserted
                         next_state <= READ_MSB;
                     end if;
 
                 when READ_MSB =>
-                    if byte_ready = '1' then
-                        msb_data <= twi_data;
-                        next_state <= READ_LSB;
-                    end if;
+                    msb_data <= twi_data;  -- Store MSB data
+                    next_state <= READ_LSB;  -- Transition to READ_LSB after reading MSB
 
                 when READ_LSB =>
-                    if byte_ready = '1' then
-                        lsb_data <= twi_data;
-                        next_state <= DONE;
-                    end if;
+                    lsb_data <= twi_data;  -- Store LSB data
+                    next_state <= DONE;    -- Transition to DONE after reading LSB
 
                 when DONE =>
-                    next_state <= IDLE;
+                    next_state <= IDLE;    -- Return to IDLE state after processing
 
                 when others =>
-                    next_state <= IDLE;
+                    next_state <= IDLE;    -- Default state is IDLE
             end case;
         end if;
     end process;
 
-    -- Combine MSB and LSB 
+    -- Combine MSB and LSB to form the 16-bit display data
     temp_data <= msb_data & lsb_data;
 
     -- Drive the final display output signal

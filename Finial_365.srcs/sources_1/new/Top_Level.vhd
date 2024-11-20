@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity TopLevel is
-    Port ( CLK      : in STD_LOGIC;         -- Fast input clock
+    Port ( CLK      : in STD_LOGIC;         -- Fast input clock (100 MHz)
            SRST     : in STD_LOGIC;         -- Synchronous reset
            MSG_I    : in STD_LOGIC;         -- Message input for TWI
            STB_I    : in STD_LOGIC;         -- Strobe input for TWI
@@ -16,29 +16,35 @@ entity TopLevel is
            SDA      : inout STD_LOGIC;      -- SDA line for I2C/TWI
            SCL      : inout STD_LOGIC;      -- SCL line for I2C/TWI
            DISP_SEL : out STD_LOGIC_VECTOR(7 downto 0); -- Display select
-           DISP_OUT : out STD_LOGIC_VECTOR(7 downto 0)  -- Display output
+           DISP_OUT : out STD_LOGIC_VECTOR(15 downto 0)  -- Display output
            );
 end TopLevel;
 
 architecture Behavioral of TopLevel is
 
     -- Internal signals for connecting components
-    signal clk_div : STD_LOGIC;               -- Divided clock for the slower logic
+    signal clk_div : STD_LOGIC;               -- Divided clck for the slower logic
     signal internal_D_O : STD_LOGIC_VECTOR(7 downto 0); 
     signal internal_DONE_O : STD_LOGIC;
     signal internal_ERR_O : STD_LOGIC;
+    signal display_data : STD_LOGIC_VECTOR(15 downto 0); -- For display output
 
     -- Clock Divider component declaration
-    component ClockDivider is
-        Port ( CLK_IN  : in STD_LOGIC;
-               CLK_OUT : out STD_LOGIC );
+    component clock_divider is
+        generic (DIVISOR : positive := 50000000); 
+        port ( mclk : in STD_LOGIC;
+               sclk : out STD_LOGIC );
     end component;
 
-    -- Display Logic component declaration
-    component DisplayLogic is
-        Port ( DATA_IN : in STD_LOGIC_VECTOR(7 downto 0);
-               DISP_SEL : out STD_LOGIC_VECTOR(7 downto 0);
-               DISP_OUT : out STD_LOGIC_VECTOR(7 downto 0) );
+    -- Display Driver component declaration
+    component display_driver is
+        Port ( clk         : in  STD_LOGIC;                     -- 100 MHz clock
+               reset       : in  STD_LOGIC;                     -- Active-high reset
+               byte_ready  : in  STD_LOGIC;                     -- Indicates when TWI data is ready
+               twi_data    : in  STD_LOGIC_VECTOR(7 downto 0);  -- Data from TWI controller
+               scl_enable  : out STD_LOGIC;                     -- TWI start signal
+               display_out : out STD_LOGIC_VECTOR(15 downto 0)  -- Formatted display data
+             );
     end component;
 
     -- TWICtl component declaration
@@ -58,14 +64,14 @@ architecture Behavioral of TopLevel is
     end component;
 
 begin
-    -- Instantiate the Clock Divider
-    U_ClockDivider: ClockDivider
+    --  the Clock Divider
+    U_ClockDivider: clock_divider
         Port map (
-            CLK_IN  => CLK,
-            CLK_OUT => clk_div
+            mclk  => CLK,        -- Fast input clock (100 MHz)
+            sclk  => clk_div     -- Output divided clock
         );
 
-    -- Instantiate the TWICtl component
+    --  the TWICtl component
     U_TWICtl: TWICtl
         generic map (CLOCKFREQ => 50)
         port map (
@@ -82,13 +88,20 @@ begin
             SCL    => SCL
         );
 
-    -- Instantiate the Display Logic component
-    U_DisplayLogic: DisplayLogic
+    -- Instantiate the Display Driver component
+    U_DisplayLogic: display_driver
         Port map (
-            DATA_IN => internal_D_O,
-            DISP_SEL => DISP_SEL,
-            DISP_OUT => DISP_OUT
+            clk         => CLK,
+            reset       => SRST,
+            byte_ready  => internal_DONE_O, -- Byte ready signal from TWI
+            twi_data    => internal_D_O,
+            scl_enable  => SCL,  -- Output SCL signal for TWI
+            display_out => display_data -- Final 16-bit display data
         );
+
+    -- Drive the display output to the top-level output
+    DISP_OUT <= display_data;
+    DISP_SEL <= (others => '1'); --set display selection
 
     -- Connect the outputs from the TWICtl to the top-level outputs
     D_O    <= internal_D_O;
