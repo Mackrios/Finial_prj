@@ -17,7 +17,7 @@ end display_driver;
 architecture Behavioral of display_driver is
 
     -- State machine states
-    type state_type is (IDLE, READ_MSB, READ_LSB, DONE);
+    type state_type is (IDLE, READ_MSB, READ_LSB, DONE,Starting);
     signal current_state, next_state : state_type;
 
     -- Internal Signals for MSB and LSB data
@@ -56,10 +56,14 @@ begin
                     next_state <= DONE;    -- Transition to DONE after reading LSB
 
                 when DONE =>
-                    next_state <= IDLE;    -- Return to IDLE state after processing
-
+                    next_state <= Starting;    -- Return to IDLE state after processing
+                when Starting =>
+                   if byte_ready = '1' then  -- Transition to READ_MSB when byte_ready is asserted
+                        next_state <= READ_MSB;
+                    end if;
+                    
                 when others =>
-                    next_state <= IDLE;    -- Default state is IDLE
+                 --   next_state <= IDLE;    -- Default state is IDLE
             end case;
         end if;
     end process;

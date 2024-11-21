@@ -44,7 +44,6 @@ begin
     master_stimulus : process
     begin
         -- Test 1: Reset Behavior
-        -- Initialize signals
         byte_ready <= '0';      -- Indicate no byte ready initially
         reset <= '0';           -- Set reset to inactive
         twi_data <= "00000000"; -- Example data
@@ -101,14 +100,14 @@ begin
             report "Test failed: Display output changed unexpectedly with invalid data" severity error;
 
         -- Test completion
-        waitclocks(clk, 10); -- Allow time to observe behavior
+        waitclocks(clk, 10); -- time to observe behavior
         assert (display_out = "1010101011001100") 
             report "Test failed: Final display output is incorrect" severity error;
 
         wait;  -- stop the process to avoid an infinite loop
     end process master_stimulus;
 
-    -- This process is for simulating the display driver and testing its functionality
+    -- simulating the display driver and testing its functionality
     DUT : entity work.display_driver
         port map (
             clk         => clk,            -- Input clock
@@ -119,7 +118,7 @@ begin
             display_out => display_out     -- Output display data
         );
 
-    -- Clock Divider component instantiation (from your `display_driver`)
+    -- Clock Divider component instantiation (from `display_driver`)
     clk_div_inst: entity work.clock_divider
         generic map (DIVISOR => 50000000)  -- Clock divider value (divides 100 MHz to 2 Hz)
         port map (
