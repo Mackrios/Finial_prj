@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="306105fs"></ZoomStartTime>
-      <ZoomEndTime time="516306fs"></ZoomEndTime>
-      <Cursor1Time time="463505fs"></Cursor1Time>
+      <ZoomStartTime time="90140fs"></ZoomStartTime>
+      <ZoomEndTime time="143291fs"></ZoomEndTime>
+      <Cursor1Time time="253057fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="117"></NameColumnWidth>
+      <NameColumnWidth column_width="105"></NameColumnWidth>
       <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/display_driver_testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -30,6 +30,14 @@
    <wvobject fp_name="/display_driver_testbench/byte_ready" type="logic">
       <obj_property name="ElementShortName">byte_ready</obj_property>
       <obj_property name="ObjectShortName">byte_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/display_driver_testbench/DUT/done_o" type="logic">
+      <obj_property name="ElementShortName">done_o</obj_property>
+      <obj_property name="ObjectShortName">done_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/display_driver_testbench/DUT/stb_i" type="logic">
+      <obj_property name="ElementShortName">stb_i</obj_property>
+      <obj_property name="ObjectShortName">stb_i</obj_property>
    </wvobject>
    <wvobject fp_name="/display_driver_testbench/twi_data" type="array">
       <obj_property name="ElementShortName">twi_data[7:0]</obj_property>
@@ -44,16 +52,12 @@
       <obj_property name="ObjectShortName">display_out[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/display_driver_testbench/addrAD2" type="array">
-      <obj_property name="ElementShortName">addrAD2[6:0]</obj_property>
-      <obj_property name="ObjectShortName">addrAD2[6:0]</obj_property>
+      <obj_property name="ElementShortName">addrAD2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addrAD2[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/display_driver_testbench/read_Bit" type="logic">
       <obj_property name="ElementShortName">read_Bit</obj_property>
       <obj_property name="ObjectShortName">read_Bit</obj_property>
-   </wvobject>
-   <wvobject fp_name="/display_driver_testbench/write_Bit" type="logic">
-      <obj_property name="ElementShortName">write_Bit</obj_property>
-      <obj_property name="ObjectShortName">write_Bit</obj_property>
    </wvobject>
    <wvobject fp_name="/display_driver_testbench/Tperiod" type="other">
       <obj_property name="ElementShortName">Tperiod</obj_property>

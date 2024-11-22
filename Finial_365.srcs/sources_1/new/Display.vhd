@@ -30,6 +30,9 @@ architecture Behavioral of State_Machine is
     signal lsb_data   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     signal temp_data  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 
+    -- Buffer signal for stb_i
+    signal stb_i_buf   : STD_LOGIC := '0';  -- Buffer signal for stb_i
+
 begin
 
     -- Clock passthrough for `scl_enable`
@@ -42,19 +45,20 @@ begin
     process(clk, reset)
     begin
         if reset = '1' then
-            current_state <= IDLE;  -- Start at START state after reset
+            current_state <= IDLE;  -- Start at IDLE state after reset
             msb_data <= (others => '0');
             lsb_data <= (others => '0');
             temp_data <= (others => '0');
+            stb_i_buf <= '0';  -- Reset the buffer to 0
         elsif rising_edge(clk) then
             current_state <= next_state;
 
             case current_state is
-               when IDLE =>
+                when IDLE =>
                     if byte_ready = '1' then
                         next_state <= START;  -- Start reading MSB
                     else
-                        next_state <= IDLE;     -- Remain in START until byte_ready is asserted
+                        next_state <= IDLE;     -- Remain in IDLE until byte_ready is asserted
                     end if;
             
                 when START =>
@@ -69,31 +73,40 @@ begin
                     next_state <= READ_LSB;     -- Transition to READ_LSB
 
                 when READ_LSB =>
-                    lsb_data <= twi_data;       -- Capture LSB data from TWI controller
-                    next_state <= DONE;         -- Transition to DONE after capturing both parts
+                    if twi_data = msb_data then
+                        lsb_data <= twi_data;       -- Capture LSB data from TWI controller
+                        next_state <= DONE;         -- Transition to DONE after capturing both parts
+                    else 
+                        -- Stay in READ_LSB until condition met
+                    end if;
 
                 when DONE =>
                     temp_data <= msb_data & lsb_data;  -- Combine MSB and LSB into 16-bit display data
                     next_state <= START;         -- Go back to START state after done
+
                 when others =>
                     next_state <= START;         -- Default to START state
             end case;
+
+            -- Logic for stb_i buffer assignment
+            if (current_state = IDLE or current_state = DONE) then
+                stb_i_buf <= '0';  -- Set buffer to 0 when in IDLE or DONE state
+            else
+                stb_i_buf <= '1';  -- Set buffer to 1 for other states
+            end if;
+
         end if;
     end process;
 
-   -- Drive the final display output signal
+    -- Assign the buffered value to stb_i
+    stb_i <= stb_i_buf;
+
+    -- Other output assignments
     display_out <= temp_data;
 
     -- TWI Control Signals
-    stb_i <= '1' when (current_state = READ_MSB or current_state = READ_LSB) else '0';
-
-    -- Assign `msg_i` based on current state (MSB and LSB register addresses)
-   msg_i <= '0' when current_state = READ_MSB else  -- Register address 0x00 for MSB
-      '1';                                   -- Register address 0x01 for LSB
-
+    msg_i <= '0' when current_state = READ_MSB else '1';  -- Message control
     a_i <= "1001011" & '1'; -- Sensor address 0x4B + read bit
-
-    -- Data input is not required for read operations
-    d_i <= (others => '0');
+    d_i <= (others => '0');  -- Data output for TWICtl
 
 end Behavioral;

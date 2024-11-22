@@ -1,0 +1,1181 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Nov 22 13:04:01 2024
+# Process ID: 7308
+# Current directory: C:/Users/mackr/Finial_365
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3788 C:\Users\mackr\Finial_365\Finial_365.xpr
+# Log file: C:/Users/mackr/Finial_365/vivado.log
+# Journal file: C:/Users/mackr/Finial_365\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mackr/Finial_365/Finial_365.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/mackr/Finial_365/Finial_365.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Clock_Div.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clock_divider'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Test failed: Incorrect display output after MSB byte reception
+Time: 220 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Incorrect display output after LSB byte reception
+Time: 270 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: TWI clock signal (scl_enable) is incorrect
+Time: 320 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with byte_ready low
+Time: 420 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with invalid data
+Time: 470 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Final display output is incorrect
+Time: 570 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1015.422 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 420 ns
+Error: Test failed: Incorrect display output after MSB byte reception
+Time: 220 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Incorrect display output after LSB byte reception
+Time: 270 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: TWI clock signal (scl_enable) is incorrect
+Time: 320 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with byte_ready low
+Time: 420 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Test failed: Incorrect display output after MSB byte reception
+Time: 220 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Incorrect display output after LSB byte reception
+Time: 270 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with byte_ready low
+Time: 420 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with invalid data
+Time: 470 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Final display output is incorrect
+Time: 570 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1015.422 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+restart: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1015.422 ; gain = 0.000
+run 420 ns
+Error: Test failed: Incorrect display output after MSB byte reception
+Time: 220 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Incorrect display output after LSB byte reception
+Time: 270 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with byte_ready low
+Time: 420 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Test failed: Incorrect display output after MSB byte reception
+Time: 220 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Incorrect display output after LSB byte reception
+Time: 270 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with byte_ready low
+Time: 420 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with invalid data
+Time: 470 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Final display output is incorrect
+Time: 570 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1015.422 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Test failed: Incorrect display output after MSB byte reception
+Time: 220 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Incorrect display output after LSB byte reception
+Time: 270 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with byte_ready low
+Time: 420 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Display output changed unexpectedly with invalid data
+Time: 470 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+Error: Test failed: Final display output is incorrect
+Time: 570 ns  Iteration: 0  Process: /display_driver_testbench/master_stimulus  File: C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1346.852 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/write_Bit was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/write_Bit was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/write_Bit was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/write_Bit was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/write_Bit was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 420 ns
+save_wave_config {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1877.602 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+ERROR: [VRFC 10-4982] syntax error near 'when' [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:85]
+ERROR: [VRFC 10-4982] syntax error near 'when' [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:91]
+ERROR: [VRFC 10-4982] syntax error near 'when' [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:99]
+ERROR: [VRFC 10-4982] syntax error near 'when' [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:105]
+ERROR: [VRFC 10-4982] syntax error near 'case' [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:108]
+ERROR: [VRFC 10-4982] syntax error near 'process' [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:110]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1877.602 ; gain = 0.000
+save_wave_config {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+ERROR: [VRFC 10-2989] 'stb_i_counter' is not declared [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:52]
+ERROR: [VRFC 10-2989] 'stb_i_counter' is not declared [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:91]
+ERROR: [VRFC 10-2989] 'stb_i_counter' is not declared [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:89]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd:22]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/DUT/done_o was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1877.602 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'display_driver_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj display_driver_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sources_1/new/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mackr/Finial_365/Finial_365.srcs/sim_1/new/Test_bench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'display_driver_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+"xelab -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fe69f7ad88914fbaa7a89a77efbb84c7 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot display_driver_testbench_behav xil_defaultlib.display_driver_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavior of entity xil_defaultlib.clock_divider [clock_divider_default]
+Compiling architecture behavior of entity xil_defaultlib.display_driver_testbench
+Built simulation snapshot display_driver_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "display_driver_testbench_behav -key {Behavioral:sim_1:Functional:display_driver_testbench} -tclbatch {display_driver_testbench.tcl} -view {C:/Users/mackr/Finial_365/TopLevel_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config C:/Users/mackr/Finial_365/TopLevel_behav.wcfg
+WARNING: Simulation object /display_driver_testbench/DUT/done_o was not found in the design.
+source display_driver_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'display_driver_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1877.602 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+restart: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1877.602 ; gain = 0.000
+run 1000 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1000 ns
