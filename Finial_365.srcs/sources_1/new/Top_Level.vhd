@@ -17,7 +17,7 @@ architecture Behavioral of TopLevel is
     -- Internal buffer signals for communication
     signal buf_srst     : STD_LOGIC;                     -- Reset signal
     signal buf_stb_i    : STD_LOGIC;                     -- Strobe signal
-    signal buf_msg_i    : STD_LOGIC_VECTOR(7 downto 0);  -- Message signal (adjusted to 8-bit)
+    signal buf_msg_i    : STD_LOGIC;  -- Message signal (adjusted to 8-bit)
     signal buf_a_i      : STD_LOGIC_VECTOR(7 downto 0);  -- Address signal
     signal buf_d_i      : STD_LOGIC_VECTOR(7 downto 0);  -- Data signal
     signal buf_d_o      : STD_LOGIC_VECTOR(7 downto 0);  -- Data output signal
@@ -42,7 +42,7 @@ architecture Behavioral of TopLevel is
             twi_data    : in  STD_LOGIC_VECTOR(7 downto 0);  -- Data from TWICtl
             srst        : out STD_LOGIC;                     -- Reset signal for TWICtl
             stb_i       : out STD_LOGIC;                     -- Strobe signal for TWICtl
-            msg_i       : out STD_LOGIC_VECTOR(7 downto 0);  -- Message data for TWICtl
+            msg_i       : out STD_LOGIC;  -- Message data for TWICtl
             a_i         : out STD_LOGIC_VECTOR(7 downto 0);  -- Address data for TWICtl
             d_i         : out STD_LOGIC_VECTOR(7 downto 0)   -- Data output for TWICtl
         );
@@ -52,7 +52,7 @@ architecture Behavioral of TopLevel is
     component TWICtl is
         generic (CLOCKFREQ : natural := 50);
         port ( 
-            MSG_I  : in  STD_LOGIC_VECTOR(7 downto 0);  -- Correct type is 8-bit vector
+            MSG_I  : in  STD_LOGIC;  -- Correct type is 8-bit vector
             STB_I  : in  STD_LOGIC;
             A_I    : in  STD_LOGIC_VECTOR(7 downto 0);
             D_I    : in  STD_LOGIC_VECTOR(7 downto 0);
@@ -65,14 +65,13 @@ architecture Behavioral of TopLevel is
             SCL    : inout STD_LOGIC
         );
     end component;
-
-    -- Signals for internal clock division and state machine logic
-    signal clk_div_out   : STD_LOGIC;  -- Divided clock output from clock divider
-    signal sm_reset      : STD_LOGIC;  -- Reset signal to state machine
-    signal sm_strobe     : STD_LOGIC;  -- Strobe signal to TWICtl
-    signal sm_message    : STD_LOGIC_VECTOR(7 downto 0);  -- Message to TWICtl
-    signal sm_address    : STD_LOGIC_VECTOR(7 downto 0);  -- Address to TWICtl
-    signal sm_data       : STD_LOGIC_VECTOR(7 downto 0);  -- Data to TWICtl
+-- Signals for internal clock division and state machine logic
+signal clk_div_out   : STD_LOGIC;  -- Divided clock output from clock divider
+signal sm_reset      : STD_LOGIC;  -- Reset signal to state machine
+signal sm_strobe     : STD_LOGIC;  -- Strobe signal to TWICtl
+signal sm_message    : STD_LOGIC;  -- Message to TWICtl (8-bit vector)
+signal sm_address    : STD_LOGIC_VECTOR(7 downto 0);  -- Address to TWICtl
+signal sm_data       : STD_LOGIC_VECTOR(7 downto 0);  -- Data to TWICtl
 
 begin
 
@@ -93,7 +92,7 @@ begin
             twi_data    => buf_d_o,            -- Data from TWICtl
             srst        => sm_reset,           -- Reset to TWICtl
             stb_i       => sm_strobe,          -- Strobe signal for TWICtl
-            msg_i       => sm_message,         -- Message for TWICtl
+            msg_i       => sm_message,         -- Message for TWICtl (matches the declaration)
             a_i         => sm_address,         -- Address for TWICtl
             d_i         => sm_data            -- Data for TWICtl
         );
@@ -102,7 +101,7 @@ begin
     U_TWICtl : TWICtl
         generic map (CLOCKFREQ => 50)  -- 50 MHz clock frequency for the I2C protocol
         port map (
-            MSG_I  => sm_message,          -- Message from State Machine
+            MSG_I  => sm_message,          -- Message from State Machine (matches the declaration)
             STB_I  => sm_strobe,           -- Strobe from State Machine
             A_I    => sm_address,          -- Address from State Machine
             D_I    => sm_data,             -- Data from State Machine
@@ -116,3 +115,4 @@ begin
         );
 
 end Behavioral;
+

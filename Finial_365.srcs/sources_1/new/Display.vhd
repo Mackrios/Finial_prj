@@ -9,11 +9,11 @@ entity State_Machine is
         reset       : in  STD_LOGIC;                     -- Active-high reset
         byte_ready  : in  STD_LOGIC;                     -- Indicates when TWI data is ready
         twi_data    : in  STD_LOGIC_VECTOR(7 downto 0);  -- Data from TWI controller
-        scl_enable  : out STD_LOGIC;                     -- TWI start signal
-        display_out : out STD_LOGIC_VECTOR(15 downto 0); -- Formatted display data
+        scl_enable  : out STD_LOGIC;                     -- TWI clock enable
+        display_out : out STD_LOGIC_VECTOR(15 downto 0); -- 16-bit combined MSB + LSB data
         srst        : out STD_LOGIC;                     -- Reset signal for TWICtl
         stb_i       : out STD_LOGIC;                     -- Strobe signal for TWICtl
-        msg_i       : out STD_LOGIC_VECTOR(7 downto 0);  -- Message data for TWICtl
+        msg_i       : out STD_LOGIC;  -- Message data for TWICtl
         a_i         : out STD_LOGIC_VECTOR(7 downto 0);  -- Address data for TWICtl
         d_i         : out STD_LOGIC_VECTOR(7 downto 0)   -- Data output for TWICtl
     );
@@ -42,7 +42,7 @@ begin
     process(clk, reset)
     begin
         if reset = '1' then
-            current_state <= START;  -- Start at START state after reset
+            current_state <= IDLE;  -- Start at START state after reset
             msb_data <= (others => '0');
             lsb_data <= (others => '0');
             temp_data <= (others => '0');
@@ -50,6 +50,13 @@ begin
             current_state <= next_state;
 
             case current_state is
+               when IDLE =>
+                    if byte_ready = '1' then
+                        next_state <= START;  -- Start reading MSB
+                    else
+                        next_state <= IDLE;     -- Remain in START until byte_ready is asserted
+                    end if;
+            
                 when START =>
                     if byte_ready = '1' then
                         next_state <= READ_MSB;  -- Transition to READ_MSB when byte_ready is asserted
@@ -74,13 +81,19 @@ begin
         end if;
     end process;
 
-    -- Drive the final display output signal
+   -- Drive the final display output signal
     display_out <= temp_data;
 
-    -- TWICtl Output Signals:
-    stb_i <= byte_ready;            -- Strobe signal indicates data is ready
-    msg_i <= msb_data;              -- Message data comes from MSB
-    a_i   <= lsb_data;              -- Address data comes from LSB
-    d_i   <= twi_data;              -- Data input from TWI controller (forwarded)
+    -- TWI Control Signals
+    stb_i <= '1' when (current_state = READ_MSB or current_state = READ_LSB) else '0';
+
+    -- Assign `msg_i` based on current state (MSB and LSB register addresses)
+   msg_i <= '0' when current_state = READ_MSB else  -- Register address 0x00 for MSB
+      '1';                                   -- Register address 0x01 for LSB
+
+    a_i <= "1001011" & '1'; -- Sensor address 0x4B + read bit
+
+    -- Data input is not required for read operations
+    d_i <= (others => '0');
 
 end Behavioral;
