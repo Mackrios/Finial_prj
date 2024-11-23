@@ -1,112 +1,181 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity State_Machine is
-    Port (
-        clk         : in  STD_LOGIC;                     -- 100 MHz clock
-        reset       : in  STD_LOGIC;                     -- Active-high reset
-        byte_ready  : in  STD_LOGIC;                     -- Indicates when TWI data is ready
-        twi_data    : in  STD_LOGIC_VECTOR(7 downto 0);  -- Data from TWI controller
-        scl_enable  : out STD_LOGIC;                     -- TWI clock enable
-        display_out : out STD_LOGIC_VECTOR(15 downto 0); -- 16-bit combined MSB + LSB data
-        srst        : out STD_LOGIC;                     -- Reset signal for TWICtl
-        stb_i       : out STD_LOGIC;                     -- Strobe signal for TWICtl
-        msg_i       : out STD_LOGIC;  -- Message data for TWICtl
-        a_i         : out STD_LOGIC_VECTOR(7 downto 0);  -- Address data for TWICtl
-        d_i         : out STD_LOGIC_VECTOR(7 downto 0)   -- Data output for TWICtl
+    port ( 
+        MSG_I  : out STD_LOGIC;                          
+        STB_I  : out STD_LOGIC;                           
+        A_I    : out  STD_LOGIC_VECTOR (7 downto 0);     
+        D_I    : out  STD_LOGIC_VECTOR (7 downto 0);      
+        D_O    : in  STD_LOGIC_VECTOR (7 downto 0);     
+        DONE_O : in  STD_LOGIC;                         
+        ERR_O  : in  STD_LOGIC;                         
+        CLK    : in std_logic;                           
+        SRST   : out std_logic;                           
+        START  : in std_logic;
+        RESET  : in std_logic;
+        DATA_OUT: out STD_LOGIC_VECTOR(15 downto 0)                 
     );
 end State_Machine;
 
 architecture Behavioral of State_Machine is
 
-    -- State machine states
-    type state_type is (IDLE, READ_MSB, READ_LSB, DONE, START);
-    signal current_state, next_state : state_type;
-
-    -- Internal signals for MSB and LSB data
-    signal msb_data   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    signal lsb_data   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    signal temp_data  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
-
-    -- Buffer signal for stb_i
-    signal stb_i_buf   : STD_LOGIC := '0';  -- Buffer signal for stb_i
+    type state_type is (IDLE, STRT, READ_MSB, Read_LSB, DONE);
+    signal present_state, next_state : state_type;
+    signal count_reset : std_logic;
+    signal count : integer RANGE 0 to 1200;
+    signal data_register : std_logic_vector(15 downto 0);
+    signal addr : std_logic_vector(6 downto 0) := b"1001011";
+    signal read_write_bit_0 : std_logic := '0';
+    signal read_write_bit_1 : std_logic := '1';
 
 begin
 
-    -- Clock passthrough for `scl_enable`
-    scl_enable <= clk;
+    clocked : PROCESS(CLK,RESET)
+       BEGIN
+         IF(RESET='1') THEN 
+           present_state <= IDLE;
+        ELSIF(rising_edge(clk)) THEN
+          present_state <= next_state;
+        END IF;  
+     END PROCESS clocked;
+    
+    counter : PROCESS(clk)
+       BEGIN
+        IF(rising_edge(CLK)) THEN
+          IF(count_reset='1') THEN 
+            count <= 0;
+          ELSE
+            count <= count + 1;
+          END IF;
+        END IF;  
+     END PROCESS counter;
 
-    -- Reset signal for TWICtl (directly tied to reset input of State_Machine)
-    srst <= reset;
+    nextstate : PROCESS(present_state, count, START, DONE_O, ERR_O)
+        BEGIN
+            CASE present_state is
+                WHEN IDLE =>
+                     count_reset <= '0';
+                     if( count = 1200 ) then
+                        count_reset <='1';
+                        next_state <= STRT;
+                     else
+                       next_state <= present_state;
+                     end if;
 
-    -- State Machine Process
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            current_state <= IDLE;  -- Start at IDLE state after reset
-            msb_data <= (others => '0');
-            lsb_data <= (others => '0');
-            temp_data <= (others => '0');
-            stb_i_buf <= '0';  -- Reset the buffer to 0
-        elsif rising_edge(clk) then
-            current_state <= next_state;
-
-            case current_state is
-                when IDLE =>
-                    if byte_ready = '1' then
-                        next_state <= START;  -- Start reading MSB
+                WHEN STRT =>
+                    count_reset <= '1';
+                    if( START = '1') then
+                        next_state <= READ_MSB;
                     else
-                        next_state <= IDLE;     -- Remain in IDLE until byte_ready is asserted
+                        next_state <= present_state;
                     end if;
-            
-                when START =>
-                    if byte_ready = '1' then
-                        next_state <= READ_MSB;  -- Transition to READ_MSB when byte_ready is asserted
+
+                WHEN READ_MSB =>
+                    count_reset <= '0';
+                    if ( count = 2) then 
+                        count_reset <= '1';
                     else
-                        next_state <= START;  -- Stay in START until byte_ready is asserted
+                        count_reset <= '0';
                     end if;
-
-                when READ_MSB =>
-                    msb_data <= twi_data;       -- Capture MSB data from TWI controller
-                    next_state <= READ_LSB;     -- Transition to READ_LSB
-
-                when READ_LSB =>
-                    if twi_data = msb_data then
-                        lsb_data <= twi_data;       -- Capture LSB data from TWI controller
-                        next_state <= DONE;         -- Transition to DONE after capturing both parts
+                    if (DONE_O = '1') then
+                        next_state <= Read_LSB;
+                    elsif (ERR_O = '1') then
+                       next_state <= STRT;
+                    else
+                        next_state <= present_state;
+                    end if;
+                    
+                WHEN Read_LSB =>
+                    count_reset <= '0';
+                    if (count = 510) then
+                        count_reset <= '1';
                     else 
-                        -- Stay in READ_LSB until condition met
+                        count_reset <= '0';
+                    end if;
+                    if (DONE_O = '1') then
+                        next_state <= DONE;
+                    elsif (ERR_O = '1') then
+                        next_state <= STRT;
+                    else 
+                        next_state <= present_state;
                     end if;
 
-                when DONE =>
-                    temp_data <= msb_data & lsb_data;  -- Combine MSB and LSB into 16-bit display data
-                    next_state <= START;         -- Go back to START state after done
+                WHEN DONE =>
+                    count_reset <= '1';
+                    if (START = '0') then
+                        next_state <= STRT;
+                    else
+                        next_state <= present_state;
+                    end if;
+           END CASE;
+    END PROCESS nextstate;
 
-                when others =>
-                    next_state <= START;         -- Default to START state
-            end case;
+    output : PROCESS(present_state, START, count) 
+           BEGIN
+           CASE present_state is
+              WHEN IDLE =>
+                    A_I <= addr & read_write_bit_0;
+                    D_I <= (others=> '0');
+                    if (count < 1) then
+                        SRST <= '1';
+                    else
+                        SRST <= '0';
+                    end if;
 
-            -- Logic for stb_i buffer assignment
-            if (current_state = IDLE or current_state = DONE) then
-                stb_i_buf <= '0';  -- Set buffer to 0 when in IDLE or DONE state
-            else
-                stb_i_buf <= '1';  -- Set buffer to 1 for other states
-            end if;
+              WHEN STRT =>
+                    if( START = '1') then
+                        STB_I <= '1';
+                        MSG_I <= '1';
+                    elsif( START = '0') then
+                        STB_I <= '0';
+                        MSG_I <= '0';
+                    end if;
 
-        end if;
-    end process;
+              WHEN READ_MSB =>
+                   A_I <= addr & read_write_bit_1;
+                   STB_I <= '1';
+                   if (count < 2) then
+                    MSG_I <= '1';
+                   else
+                    MSG_I <= '0';
+                   end if;
 
-    -- Assign the buffered value to stb_i
-    stb_i <= stb_i_buf;
+              WHEN Read_LSB =>
+                if (count = 1) then
+                    MSG_I <= '1';
+                else 
+                    MSG_I <= '0';
+                end if;
+                if (count > 509) then
+                    STB_I <= '0';
+                else
+                    STB_I <= '1';
+                end if;
 
-    -- Other output assignments
-    display_out <= temp_data;
+              WHEN DONE =>  
+                STB_I <= '0';
+                MSG_I <= '1';
+          END CASE;
+    END PROCESS output;
 
-    -- TWI Control Signals
-    msg_i <= '0' when current_state = READ_MSB else '1';  -- Message control
-    a_i <= "1001011" & '1'; -- Sensor address 0x4B + read bit
-    d_i <= (others => '0');  -- Data output for TWICtl
+    data_register_update : PROCESS(CLK, RESET)
+        BEGIN
+            IF RESET = '1' THEN
+                data_register <= (others => '0');
+            ELSIF rising_edge(CLK) THEN
+                IF present_state = READ_MSB AND DONE_O = '1' THEN
+                    data_register(15 downto 8) <= D_O;
+                END IF;
 
+        -- Update lower 8 bits in Read_LSB state
+                IF present_state = Read_LSB AND DONE_O = '1' THEN
+                    data_register(7 downto 0) <= D_O;
+                END IF;
+            END IF;
+        END PROCESS data_register_update;
+
+    DATA_OUT <= data_register;
+    
 end Behavioral;

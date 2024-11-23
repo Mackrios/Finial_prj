@@ -2,12 +2,11 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Nov 20 12:15:18 2024
-# Process ID: 3100
+# Start of session at: Fri Nov 22 22:15:54 2024
+# Process ID: 15904
 # Current directory: C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xsim.dir/TopLevel_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xsim.dir/StateMachine_V2_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xsim.dir/TopLevel_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Nov 20 12:15:19 2024...
+source C:/Users/mackr/Finial_365/Finial_365.sim/sim_1/behav/xsim/xsim.dir/StateMachine_V2_behav/webtalk/xsim_webtalk.tcl -notrace

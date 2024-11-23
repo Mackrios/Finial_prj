@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../Downloads/Uni Stuff/EGRE_365/Lab9/Lab9/TWICtl.vhd" \
+"../../../../Finial_365.srcs/sim_1/new/Test_bench.vhd" \
+
+# Do not sort compile order
+nosort
