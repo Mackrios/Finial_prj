@@ -54,58 +54,102 @@ architecture behavior of TWI_testbench is
 	-- times to furnish an "ACK" signal to the TWI master device and '0' and 'H' at appropriate times to 
 	-- simulate the data being returned from the TMP over the TWI bus.
 	
-	slave_stimulus : process
+slave_stimulus : process
       begin
-		SDA_sig <= 'H';						-- not driven
-		SCL_sig <= 'H';						-- not driven
+SDA_sig <= 'H'; -- not driven
+SCL_sig <= 'H'; -- not driven
 
-										-- address write
-		waitclocks(SCL_sig, 9);			-- wait for transmission time
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);			-- wait for ack time
-		SDA_sig <= 'H';
+-- address write
+waitclocks(SCL_sig, 9); -- wait for transmission time
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1); -- wait for ack time
+SDA_sig <= 'H';
 
-		SDA_sig <= 'H';					-- MSB (upper byte)
-		waitclocks(SCL_sig, 1);	
-		SDA_sig <= '1';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '1';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';					-- LSB
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';					-- Release bus
+SDA_sig <= 'H'; -- MSB (upper byte)
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0'; -- LSB
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H'; -- Release bus
 
-		
-		waitclocks(SCL_sig, 1);			
-		SDA_sig <= '0';					-- MSB (lower byte)
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '1';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '1';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '1';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= '0';					-- LSB (lower byte)
-		waitclocks(SCL_sig, 1);
-		SDA_sig <= 'H';
 
-        wait; -- stop the process to avoid an infinite loop
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0'; -- MSB (lower byte)
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0'; -- LSB (lower byte)
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
 
-	end process slave_stimulus;
+-- address write
+waitclocks(SCL_sig, 10); -- wait for transmission time
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1); -- wait for ack time
+SDA_sig <= 'H';
+
+SDA_sig <= 'H'; -- MSB (upper byte)
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0'; -- LSB
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H'; -- Release bus
+
+
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0'; -- MSB (lower byte)
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= '0';
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H'; -- LSB (lower byte)
+waitclocks(SCL_sig, 1);
+SDA_sig <= 'H';
+
+wait; -- stop the process to avoid an infinite loop
+
+end process slave_stimulus;
 
  
     -- this is the component instantiation for the

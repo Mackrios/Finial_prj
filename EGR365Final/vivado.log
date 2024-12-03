@@ -1,0 +1,933 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Dec  3 11:27:17 2024
+# Process ID: 19640
+# Current directory: C:/Users/atiamo/Finial_prj2/EGR365Final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6388 C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.xpr
+# Log file: C:/Users/atiamo/Finial_prj2/EGR365Final/vivado.log
+# Journal file: C:/Users/atiamo/Finial_prj2/EGR365Final\vivado.jou
+# Running On: EGR-W447-17, OS: Windows, CPU Frequency: 3696 MHz, CPU Physical cores: 6, Host memory: 34178 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/Vivado Projects/EGR365Final' since last save.
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1680.816 ; gain = 241.648
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWICtl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1680.816 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 4 ms
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: ADT_toplevel
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20928
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2403.945 ; gain = 433.215
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ADT_toplevel' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:20]
+INFO: [Synth 8-113] binding component instance 'PULLUP_SDA' to cell 'PULLUP' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:82]
+INFO: [Synth 8-113] binding component instance 'PULLUP_SCL' to cell 'PULLUP' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:83]
+	Parameter DIVISOR bound to: 50000000 - type: integer 
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Clock_Div.vhd:4' bound to instance 'ClockDiv_inst' of component 'clock_divider' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'clock_divider' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Clock_Div.vhd:12]
+	Parameter DIVISOR bound to: 50000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_divider' (0#1) [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Clock_Div.vhd:12]
+INFO: [Synth 8-3491] module 'State_Machine' declared at 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd:5' bound to instance 'StateMachine' of component 'State_Machine' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'State_Machine' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd:22]
+WARNING: [Synth 8-614] signal 'addr' is read in the process but is not in the sensitivity list [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd:107]
+WARNING: [Synth 8-614] signal 'read_write_bit_0' is read in the process but is not in the sensitivity list [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd:107]
+WARNING: [Synth 8-614] signal 'read_write_bit_1' is read in the process but is not in the sensitivity list [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'State_Machine' (0#1) [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd:22]
+	Parameter CLOCKFREQ bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'TWICtl' declared at 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:31' bound to instance 'TWICtl_i' of component 'TWICtl' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'TWICtl' [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:87]
+	Parameter CLOCKFREQ bound to: 100 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:308]
+INFO: [Synth 8-226] default block is never used [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:341]
+INFO: [Synth 8-226] default block is never used [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:359]
+INFO: [Synth 8-226] default block is never used [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:377]
+INFO: [Synth 8-226] default block is never used [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:395]
+INFO: [Synth 8-256] done synthesizing module 'TWICtl' (0#1) [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'ADT_toplevel' (0#1) [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/ADT_toplevel_skeleton.vhd:20]
+WARNING: [Synth 8-6014] Unused sequential element timeOutCnt_reg was removed.  [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:214]
+WARNING: [Synth 8-6014] Unused sequential element errTypeR_reg was removed.  [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Lab9/TWICtl.vhd:291]
+WARNING: [Synth 8-7129] Port SCL_ALT_IN in module ADT_toplevel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SDA_ALT_IN in module ADT_toplevel is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2516.512 ; gain = 545.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2516.512 ; gain = 545.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2516.512 ; gain = 545.781
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2516.512 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/constrs_1/imports/Downloads/Nexys4DDR_Master_skeleton.xdc]
+Finished Parsing XDC File [C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/constrs_1/imports/Downloads/Nexys4DDR_Master_skeleton.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2578.070 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2638.316 ; gain = 667.586
+24 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2638.316 ; gain = 957.500
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2675.262 ; gain = 21.688
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 4 ms
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3741.574 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 4 ms
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3748.215 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 4 ms
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property -name {xsim.simulate.runtime} -value {4ms} -objects [get_filesets sim_1]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+save_wave_config {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+set_property xsim.view C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg [get_filesets sim_1]
+close_sim
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sources_1/imports/Downloads/Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'State_Machine'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -view {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -view {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -view {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'TWI_testbench'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'TWI_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj TWI_testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.srcs/sim_1/imports/Lab9/TWICtl_testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TWI_testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log"
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TWI_testbench_behav xil_defaultlib.TWI_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling architecture behavioral of entity xil_defaultlib.State_Machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.TWICtl [\TWICtl(clockfreq=100)\]
+Compiling architecture behavior of entity xil_defaultlib.twi_testbench
+Built simulation snapshot TWI_testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TWI_testbench_behav -key {Behavioral:sim_1:Functional:TWI_testbench} -tclbatch {TWI_testbench.tcl} -view {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 4ms
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TWI_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 4ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.215 ; gain = 0.000
+save_wave_config {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg}
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\ADT_toplevel_skeleton.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\ADT_toplevel_skeleton.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Lab9\TWICtl.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\ADT_toplevel_skeleton.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sources_1\imports\Downloads\Display.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.srcs\sim_1\imports\Lab9\TWICtl_testbench.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  3 12:32:10 2024...

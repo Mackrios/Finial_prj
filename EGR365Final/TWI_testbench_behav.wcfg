@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TWI_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TWI_testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="4,000.000001 us"></ZoomEndTime>
+      <Cursor1Time time="10.780000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/TWI_testbench/CLK_sig" type="logic">
+      <obj_property name="ElementShortName">CLK_sig</obj_property>
+      <obj_property name="ObjectShortName">CLK_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/RESET_sig" type="logic">
+      <obj_property name="ElementShortName">RESET_sig</obj_property>
+      <obj_property name="ObjectShortName">RESET_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/SCL_sig" type="logic">
+      <obj_property name="ElementShortName">SCL_sig</obj_property>
+      <obj_property name="ObjectShortName">SCL_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/MSG_I_sig" type="logic">
+      <obj_property name="ElementShortName">MSG_I_sig</obj_property>
+      <obj_property name="ObjectShortName">MSG_I_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/STB_I_sig" type="logic">
+      <obj_property name="ElementShortName">STB_I_sig</obj_property>
+      <obj_property name="ObjectShortName">STB_I_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/DONE_O_sig" type="logic">
+      <obj_property name="ElementShortName">DONE_O_sig</obj_property>
+      <obj_property name="ObjectShortName">DONE_O_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/ERR_O_sig" type="logic">
+      <obj_property name="ElementShortName">ERR_O_sig</obj_property>
+      <obj_property name="ObjectShortName">ERR_O_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/SDA_sig" type="logic">
+      <obj_property name="ElementShortName">SDA_sig</obj_property>
+      <obj_property name="ObjectShortName">SDA_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/A_I_sig" type="array">
+      <obj_property name="ElementShortName">A_I_sig[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A_I_sig[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/D_I_sig" type="array">
+      <obj_property name="ElementShortName">D_I_sig[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D_I_sig[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/D_O_sig" type="array">
+      <obj_property name="ElementShortName">D_O_sig[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D_O_sig[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/START_sig" type="logic">
+      <obj_property name="ElementShortName">START_sig</obj_property>
+      <obj_property name="ObjectShortName">START_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/DATA_OUT_sig" type="array">
+      <obj_property name="ElementShortName">DATA_OUT_sig[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT_sig[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/SRST_sig" type="logic">
+      <obj_property name="ElementShortName">SRST_sig</obj_property>
+      <obj_property name="ObjectShortName">SRST_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/LED_sig" type="array">
+      <obj_property name="ElementShortName">LED_sig[15:0]</obj_property>
+      <obj_property name="ObjectShortName">LED_sig[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/addrAD2" type="array">
+      <obj_property name="ElementShortName">addrAD2[6:0]</obj_property>
+      <obj_property name="ObjectShortName">addrAD2[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/read_Bit" type="logic">
+      <obj_property name="ElementShortName">read_Bit</obj_property>
+      <obj_property name="ObjectShortName">read_Bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TWI_testbench/write_Bit" type="logic">
+      <obj_property name="ElementShortName">write_Bit</obj_property>
+      <obj_property name="ObjectShortName">write_Bit</obj_property>
+   </wvobject>
+</wave_config>

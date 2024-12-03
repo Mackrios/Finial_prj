@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Dec  3 11:27:17 2024
+# Process ID: 19640
+# Current directory: C:/Users/atiamo/Finial_prj2/EGR365Final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6388 C:\Users\atiamo\Finial_prj2\EGR365Final\EGR365Final.xpr
+# Log file: C:/Users/atiamo/Finial_prj2/EGR365Final/vivado.log
+# Journal file: C:/Users/atiamo/Finial_prj2/EGR365Final\vivado.jou
+# Running On: EGR-W447-17, OS: Windows, CPU Frequency: 3696 MHz, CPU Physical cores: 6, Host memory: 34178 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/atiamo/Finial_prj2/EGR365Final/EGR365Final.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source TWI_testbench.tcl
+restart
+run 4 ms
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_sim
+launch_simulation
+source TWI_testbench.tcl
+restart
+run 4 ms
+close_sim
+launch_simulation
+source TWI_testbench.tcl
+restart
+run 4 ms
+close_sim
+launch_simulation
+source TWI_testbench.tcl
+restart
+run 4 ms
+close_sim
+set_property -name {xsim.simulate.runtime} -value {4ms} -objects [get_filesets sim_1]
+launch_simulation
+source TWI_testbench.tcl
+close_sim
+launch_simulation
+source TWI_testbench.tcl
+close_sim
+launch_simulation
+source TWI_testbench.tcl
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+save_wave_config {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+set_property xsim.view C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg
+source TWI_testbench.tcl
+save_wave_config {C:/Users/atiamo/Finial_prj2/EGR365Final/TWI_testbench_behav.wcfg}
+close_sim
